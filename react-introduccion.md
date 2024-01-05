@@ -57,7 +57,30 @@ Ej: TitleText.
 
 `TODOS LOS COMPONENTE HAY QUE EXPORTARLOS`
 
+# PROPS
 
+# App
+`Formato jscript`
+return Title('Soy una cabra');
 
+`Formato react`
+`Por consola sale un objeto` con el texto 'Soy una cabra.'
+return <Title message='Soy una cabra.' />
+
+Se pueden pasar todas las props que queramos.
+Todo lo que `no` sea un `string` hay que `ponerlo entre corchetes {}`
+return <Title message='Soy una cabra.' age={23}/>
+
+# Title
+const Title = props => {
+	console.log(props); // Sale por consola un objeto que tiene message: 'Soy una cabra' y age: 23
+	return (
+		<h1>
+			{props.message} y tengo {props.age} años
+		</h1>
+	);
+};
+
+export default Title;
 
 
