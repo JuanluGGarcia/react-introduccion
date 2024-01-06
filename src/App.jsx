@@ -75,6 +75,7 @@ export default App; */
 // ------- PROPS ---------
 
 import Title from "./components/title/Title"
+import Header from "./components/header/Header"
 
 const App = () => {
 	// Formato jscript
@@ -86,7 +87,18 @@ const App = () => {
 
 	// Se pueden pasar todas las props que queramos.
 	// Todo lo que no sea un string hay que ponerlo entre corchetes {}
-	return <Title message='Soy una cabra' age={23} />
+	return (
+		/* <>
+			<Title message='Soy una cabra' age={23} />
+		</> */
+		
+		// Retornar hijos
+		<Header>
+			<Title message='Titulo 1' />
+			<Title message='Titulo 2' />
+			<Title message='Titulo 3' />
+		</Header>
+	) 
 }
 
 export default App;

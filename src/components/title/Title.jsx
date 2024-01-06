@@ -39,7 +39,8 @@ const Title = props => {
 		// <h1 className={style.red}>
 		// <h1 className={style['dark-orange']}> 
 		<h1 className={`${style['dark-orange']} ${style.xl}`}> 
-			{props.message} y tengo {props.age} años
+			{/* {props.message} y tengo {props.age} años */}
+			{props.message}
 		</h1>
 	);
 };

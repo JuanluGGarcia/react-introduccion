@@ -115,3 +115,51 @@ Para poner dos clases se pondría con un template-string:
 #		{props.message} y tengo {props.age} años
 #	</h1>
 # );
+
+
+# REUTILIZAR COMPONENTES
+
+Copiamos el componente que queremos y le cambiamos las props que queramos.
+
+# CHILDRENS (HIJOS)
+
+Cuando tengamos un componente (en este caso Header) que actua como contenedor para otras cosas, para que pinte lo que tiene dentro se pondría de la siguiente manera.
+
+# componente Header
+const Header = (props) => {
+	
+	// Hay que poner {props.children} para que pinte lo que tiene dentro, que son los 3 h1 de Title.
+
+	return <header>{props.children}</header>;
+};
+
+export default Header;
+
+# componente Title
+const Title = () => {
+	return (
+		<h1>
+			{props.message}
+		</h1>
+	);
+};
+
+return default Title;
+
+# componente App
+import Title from "./components/title/Title"
+import Header from "./components/header/Header"
+
+const App = () => {
+	return (
+		
+		// Retornar hijos
+		<Header>
+			<Title message='Titulo 1' />
+			<Title message='Titulo 2' />
+			<Title message='Titulo 3' />
+		</Header>
+	) 
+}
+
+export default App;
