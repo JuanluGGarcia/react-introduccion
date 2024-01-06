@@ -59,7 +59,7 @@ Ej: TitleText.
 
 # PROPS
 
-# App
+# App.jsx
 `Formato jscript`
 return Title('Soy una cabra');
 
@@ -72,7 +72,7 @@ Todo lo que `no` sea un `string` hay que `ponerlo entre corchetes {}`
 return <Title message='Soy una cabra.' age={23}/>
 
 # Title
-const Title = props => {
+const Title = props => { // Si le pongo por ejemplo message en vez de props, se pone ({ message })
 	console.log(props); // Sale por consola un objeto que tiene message: 'Soy una cabra' y age: 23
 	return (
 		<h1>
@@ -84,3 +84,34 @@ const Title = props => {
 export default Title;
 
 
+# CSS MODULES
+
+Este archivo `se crea en la carpeta del componente` con el nombre: `nombrecomponente.module.css`
+
+Es un archivo css normal.
+
+Este archivo hay que importarlo al componente para que funcione, poniendo al principio del archivo del componente la linea: `import style from './nombrecomponente.module.css'`
+
+Para usarlo se pondría:
+
+# return (
+#	<h1 className={style.nombredelaclase}>
+#		{props.message} y tengo {props.age} años
+#	</h1>
+# );
+
+Si el nombre de la clase es nombre compuesto, es decir, que lleva un - se pondría de la siguiente manera:
+
+# return (
+#	<h1 className={style['dark-orange']}>
+#		{props.message} y tengo {props.age} años
+#	</h1>
+# );
+
+Para poner dos clases se pondría con un template-string:
+
+# return (
+#	<h1 className={`${style['dark-orange']} ${style.xl}`}>
+#		{props.message} y tengo {props.age} años
+#	</h1>
+# );

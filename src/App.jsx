@@ -86,7 +86,7 @@ const App = () => {
 
 	// Se pueden pasar todas las props que queramos.
 	// Todo lo que no sea un string hay que ponerlo entre corchetes {}
-	return <Title message='Soy una cabra' age={23}/>
+	return <Title message='Soy una cabra' age={23} />
 }
 
 export default App;
